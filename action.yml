@@ -1,0 +1,23 @@
+name: "Commit Status Action"
+description: "Start an SSH server for debugging GitHub Actions."
+runs:
+  using: node12
+  pre: ./build/pre.js
+  main: ./build/index.js
+  post: ./build/post.js
+inputs:
+  github_token:
+    description: "A GitHub access token used for fetching the collaborators on the project."
+    required: true
+    default: ${{ github.token }}
+  sha:
+    description: "The commit SHA to create the status on."
+    required: true
+    default: ${{ github.sha }}
+  matrix:
+    description: "The matrix parameters of the build."
+    required: true
+    default: ${{ toJSON(matrix) }}
+  steps:
+    description: "The steps of the build."
+    required: true

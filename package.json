@@ -1,0 +1,15 @@
+{
+	"name": "commit-status-action",
+	"description": "TODO",
+	"scripts": {
+		"build": "tsc"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@actions/core": "^1.2.4",
+		"@actions/github": "^4.0.0"
+	},
+	"devDependencies": {
+		"typescript": "^3.8.3"
+	}
+}
